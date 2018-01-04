@@ -1,5 +1,6 @@
 FROM debian:stretch-slim
-LABEL maintainer "Andre Peters <andre.peters@servercow.de>"
+
+LABEL maintainer "Pedro Pereira <pedrogoncalvesp.95@gmail.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL C
@@ -43,6 +44,8 @@ COPY ./bootstrap-sogo.sh /
 COPY syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY conf /etc/sogo
+
+EXPOSE 20000
 
 CMD exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
 

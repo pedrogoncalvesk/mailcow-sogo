@@ -4,7 +4,7 @@
 while mysqladmin ping --host mysql -u${DBUSER} -p${DBPASS}${DBPASS} --silent; do
 
 # Wait until port becomes free and send sig
-until ! nc -z sogo-mailcow 20000;
+until ! nc -z sogo 20000;
 do
 	killall -TERM sogod
 	sleep 3
