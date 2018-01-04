@@ -45,6 +45,8 @@ COPY syslog-ng.conf /etc/syslog-ng/syslog-ng.conf
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 COPY conf /etc/sogo
 
+RUN chmod +x /bootstrap-sogo.sh
+
 EXPOSE 20000
 
 CMD exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
