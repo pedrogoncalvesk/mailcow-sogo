@@ -48,6 +48,7 @@ COPY conf /etc/sogo
 RUN chmod +x /bootstrap-sogo.sh
 
 EXPOSE 20000
+EXPOSE 9192
 
 CMD exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
 
